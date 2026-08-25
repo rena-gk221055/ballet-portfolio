@@ -1,242 +1,28 @@
-:root {
-  --background: #f4f1ed;
-  --surface: #ffffff;
-  --text: #2d2926;
-  --subtext: #6c625c;
-  --accent: #745062;
-  --line: #d8d0ca;
-}
-
-/* 基本設定 */
-*,
-*::before,
-*::after {
+html {
   box-sizing: border-box;
 }
 
-html {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
+  margin: 0;
+  background: #ffffff;
+}
+
+.gallery {
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-
-  background: var(--background);
-  color: var(--text);
-
-  font-family:
-    "Helvetica Neue",
-    "Hiragino Kaku Gothic ProN",
-    "Yu Gothic",
-    sans-serif;
-
-  line-height: 1.8;
 }
 
-/* ヘッダー */
-.site-header {
-  width: calc(100% - 48px);
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 60px 0 50px;
-}
-
-.eyebrow {
-  margin: 0 0 12px;
-
-  color: var(--accent);
-
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-}
-
-h1 {
-  margin: 0;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: clamp(42px, 7vw, 92px);
-  font-weight: 400;
-  line-height: 1.05;
-}
-
-.introduction {
-  margin: 28px 0 0;
-  color: var(--subtext);
-  font-size: 16px;
-}
-
-/* メイン領域 */
-main {
-  width: calc(100% - 48px);
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 0 100px;
-}
-
-/* 各作品 */
-.work {
-  width: 100%;
-  padding: 60px 0;
-  border-top: 1px solid var(--line);
-}
-
-.work-heading {
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
-
-  margin-bottom: 30px;
-}
-
-.number {
-  flex: 0 0 42px;
-  margin: 8px 0 0;
-
-  color: var(--accent);
-
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-}
-
-.work-heading h2 {
-  margin: 0;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: clamp(30px, 5vw, 52px);
-  font-weight: 400;
-  line-height: 1.2;
-}
-
-.work-heading p {
-  margin: 8px 0 0;
-  color: var(--subtext);
-}
-
-/* 画像枠 */
-.image-frame {
-  width: 100%;
-  margin: 0;
-  padding: 12px;
-
-  overflow: hidden;
-
-  background: var(--surface);
-  border: 1px solid var(--line);
-
-  box-shadow:
-    0 18px 50px
-    rgba(50, 40, 35, 0.08);
-}
-
-/* 画像をブラウザ幅に合わせて拡大・縮小 */
-.image-frame img {
+.gallery img {
   display: block;
-
   width: 100%;
-  max-width: none;
   height: auto;
-
   margin: 0;
-}
-
-/* フッター */
-footer {
-  width: 100%;
-
-  padding: 35px 24px;
-
-  border-top: 1px solid var(--line);
-
-  color: var(--subtext);
-
-  text-align: center;
-  font-size: 13px;
-}
-
-/* タブレット・スマートフォン */
-@media screen and (max-width: 768px) {
-
-  .site-header {
-    width: calc(100% - 24px);
-    padding: 42px 0 35px;
-  }
-
-  main {
-    width: calc(100% - 24px);
-    padding-bottom: 60px;
-  }
-
-  h1 {
-    font-size: clamp(38px, 11vw, 58px);
-  }
-
-  .work {
-    padding: 42px 0;
-  }
-
-  .work-heading {
-    display: block;
-    margin-bottom: 20px;
-  }
-
-  .number {
-    margin: 0 0 6px;
-  }
-
-  .work-heading h2 {
-    font-size: 28px;
-  }
-
-  .image-frame {
-    padding: 4px;
-  }
-}
-
-/* 小型スマートフォン */
-@media screen and (max-width: 480px) {
-
-  .site-header {
-    width: calc(100% - 16px);
-    padding-top: 32px;
-  }
-
-  main {
-    width: calc(100% - 16px);
-  }
-
-  h1 {
-    font-size: 36px;
-  }
-
-  .introduction {
-    font-size: 14px;
-  }
-
-  .work {
-    padding: 32px 0;
-  }
-
-  .work-heading h2 {
-    font-size: 24px;
-  }
-
-  .image-frame {
-    padding: 2px;
-  }
+  padding: 0;
 }
