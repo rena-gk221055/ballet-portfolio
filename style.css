@@ -158,3 +158,78 @@ footer {
     padding: 7px;
   }
 }
+
+/* 画面から横にはみ出さないための設定 */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* 幅の計算に余白を含める */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* メイン部分をスマートフォンでも見やすくする */
+main,
+.site-header {
+  width: min(1100px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* すべての画像を画面幅に収める */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 画像を囲む枠も画面幅を超えない */
+.image-frame {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* 縦長作品も画面幅に合わせる */
+.long-design {
+  width: 100%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 小さい画面用 */
+@media screen and (max-width: 768px) {
+  main,
+  .site-header {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .image-frame {
+    padding: 5px;
+  }
+
+  .work-heading {
+    display: block;
+  }
+
+  h1 {
+    font-size: 38px;
+    overflow-wrap: anywhere;
+  }
+
+  .work-heading h2 {
+    font-size: 28px;
+  }
+}
