@@ -7,16 +7,27 @@
   --line: #d8d0ca;
 }
 
-* {
+/* 基本設定 */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
   scroll-behavior: smooth;
 }
 
 body {
+  width: 100%;
+  max-width: 100%;
   margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   background: var(--background);
   color: var(--text);
   font-family:
@@ -27,10 +38,12 @@ body {
   line-height: 1.8;
 }
 
+/* ヘッダー */
 .site-header {
+  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 90px 24px 70px;
+  padding: 70px 24px 55px;
 }
 
 .eyebrow {
@@ -45,9 +58,10 @@ h1 {
   max-width: 800px;
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(40px, 8vw, 88px);
+  font-size: clamp(38px, 7vw, 82px);
   font-weight: 400;
   line-height: 1.05;
+  overflow-wrap: anywhere;
 }
 
 .introduction {
@@ -57,6 +71,7 @@ h1 {
   font-size: 16px;
 }
 
+/* ナビゲーション */
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -75,14 +90,17 @@ nav a:hover {
   color: var(--accent);
 }
 
+/* メイン */
 main {
+  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px 100px;
 }
 
 .work {
-  padding: 70px 0;
+  width: 100%;
+  padding: 60px 0;
   border-top: 1px solid var(--line);
 }
 
@@ -114,8 +132,11 @@ main {
   letter-spacing: 0.1em;
 }
 
+/* 画像 */
 .image-frame {
-  padding: 18px;
+  width: 100%;
+  max-width: 100%;
+  padding: 12px;
   overflow: hidden;
   background: var(--surface);
   border: 1px solid var(--line);
@@ -125,111 +146,16 @@ main {
 .image-frame img {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: auto;
-}
-
-.long-design {
-  max-width: 700px;
   margin: 0 auto;
 }
 
-footer {
-  padding: 35px 24px;
-  border-top: 1px solid var(--line);
-  color: var(--subtext);
-  text-align: center;
-  font-size: 13px;
-}
-
-@media (max-width: 600px) {
-  .site-header {
-    padding-top: 55px;
-  }
-
-  .work {
-    padding: 50px 0;
-  }
-
-  .work-heading {
-    gap: 12px;
-  }
-
-  .image-frame {
-    padding: 7px;
-  }
-}
-
-/* 画面から横にはみ出さないための設定 */
-html,
-body {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-/* 幅の計算に余白を含める */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* メイン部分をスマートフォンでも見やすくする */
-main,
-.site-header {
-  width: min(1100px, 100%);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-/* すべての画像を画面幅に収める */
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-/* 画像を囲む枠も画面幅を超えない */
-.image-frame {
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-/* 縦長作品も画面幅に合わせる */
+/*
+  1枚目は元画像が細長いため、
+  大画面では幅を抑えて縦方向の巨大化を防ぐ
+*/
 .long-design {
   width: 100%;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* 小さい画面用 */
-@media screen and (max-width: 768px) {
-  main,
-  .site-header {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  .image-frame {
-    padding: 5px;
-  }
-
-  .work-heading {
-    display: block;
-  }
-
-  h1 {
-    font-size: 38px;
-    overflow-wrap: anywhere;
-  }
-
-  .work-heading h2 {
-    font-size: 28px;
-  }
-}
+  max-width: 620px;
+  margin:
