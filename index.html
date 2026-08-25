@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Canva Gallery</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: #fff;
+    }
+    #gallery {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    #gallery img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <main id="gallery">
+    <img src="images/portfolio.png" alt="">
+    <img src="images/report.png" alt="">
+    <img src="images/ballet.png" alt="">
+  </main>
+  <script>
+    function fitImages() {
+      const width = document.documentElement.clientWidth;
+      document.querySelectorAll('#gallery img').forEach(function (img) {
+        img.style.width = width + 'px';
+        img.style.maxWidth = width + 'px';
+        img.style.height = 'auto';
+      });
+    }
+    window.addEventListener('load', fitImages);
+    window.addEventListener('resize', fitImages);
+  </script>
+</body>
+</html>
